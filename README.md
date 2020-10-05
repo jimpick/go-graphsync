@@ -196,7 +196,7 @@ var errors <-chan error
 responseProgress, errors = exchange.Request(ctx context.Context, p peer.ID, root ipld.Link, selector ipld.Node)
 ```
 
-Paramater Notes:
+Parameter Notes:
 1. `ctx` is the context for this request. To cancel an in progress request, cancel the context.
 2. `p` is the peer you will send this request to
 3. `link` is an IPLD Link, i.e. a CID (cidLink.Link{Cid})
