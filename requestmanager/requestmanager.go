@@ -139,6 +139,7 @@ func (rm *RequestManager) SendRequest(ctx context.Context,
 	root ipld.Link,
 	selector ipld.Node,
 	extensions ...graphsync.ExtensionData) (<-chan graphsync.ResponseProgress, <-chan error) {
+	fmt.Printf("Jim go-graphsync SendRequest %v %v\n", p, root)
 	if _, err := ipldutil.ParseSelector(selector); err != nil {
 		return rm.singleErrorResponse(fmt.Errorf("Invalid Selector Spec"))
 	}

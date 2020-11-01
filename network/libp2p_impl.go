@@ -124,6 +124,7 @@ func (gsnet *libp2pGraphSyncNetwork) SetDelegate(r Receiver) {
 }
 
 func (gsnet *libp2pGraphSyncNetwork) ConnectTo(ctx context.Context, p peer.ID) error {
+	fmt.Printf("Jim go-graphsync ConnectTo %v\n", p)
 	return gsnet.host.Connect(ctx, peer.AddrInfo{ID: p})
 }
 
@@ -131,6 +132,7 @@ func (gsnet *libp2pGraphSyncNetwork) ConnectTo(ctx context.Context, p peer.ID) e
 func (gsnet *libp2pGraphSyncNetwork) handleNewStream(s network.Stream) {
 	defer s.Close()
 
+	fmt.Printf("Jim go-graphsync handleNewStream %v\n", s)
 	if gsnet.receiver == nil {
 		_ = s.Reset()
 		return
