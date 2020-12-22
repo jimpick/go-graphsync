@@ -91,6 +91,7 @@ func (gsnet *libp2pGraphSyncNetwork) NewMessageSender(ctx context.Context, p pee
 }
 
 func (gsnet *libp2pGraphSyncNetwork) newStreamToPeer(ctx context.Context, p peer.ID) (network.Stream, error) {
+	fmt.Printf("Jim graphsync newSteamToPeer %v\n", p)
 	return gsnet.host.NewStream(ctx, p, ProtocolGraphsync)
 }
 
